@@ -1,5 +1,5 @@
 const errorDiv = document.getElementById('error-message');
-const spinner = document.getElementById('spinner');
+
 const searchBook = () => {
   const searchField = document.getElementById('search-field');
   const searchText = searchField.value;
@@ -12,14 +12,19 @@ const searchBook = () => {
   else {
     //clear
     errorDiv.innerText = "";
-
   }
+  //spinner
+  const toggleSpinner = displayStyle => {
+    document.getElementById('spinner').style.display = displayStyle;
+  }
+  //lode spinner 
+  toggleSpinner("block")
+
   // load data
-  spinner.classList.remove("d-none")
   fetch(`https://openlibrary.org/search.json?q=${searchText}`)
     .then(res => res.json())
     .then(data => displaySearchResult(data.docs))
-    .finally(() => { spinner.classList.add("d-none") })
+    .finally(() => toggleSpinner("none"))
 };
 
 const displaySearchResult = books => {
