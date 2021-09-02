@@ -21,9 +21,9 @@ const displaySearchResult = books => {
   const searchResult = document.getElementById('search-result');
   searchResult.textContent = '';
   books.forEach(book => {
-    // console.log(book);
-    console.log(books.length);
+    console.log(book);
     const resultFount = document.getElementById('result-fount');
+    resultFount.innerText = ""
     resultFount.innerText = `${books.length}`;
     const div = document.createElement('div');
     div.classList.add('col');
@@ -33,6 +33,7 @@ const displaySearchResult = books => {
               <div class="card-body">
                   <h5 class="card-title">Book name: ${book.title}</h5>
                   <p class="card-text">Author name: ${book.author_name}</p>
+                  <p class="card-text">publisher: ${book.publisher}</p>
                   <p class="card-text">First publish: ${book.first_publish_year}</p>
               </div>
           </div>
