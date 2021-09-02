@@ -17,31 +17,60 @@
 </head>
 
 <body>
-  <section class="container">
-    <h2 class="text-center text-info p-3">Search your favorite book</h2>
-    <!-- book search area -->
-    <div class="input-group mb-3 w-75 mx-auto">
-      <input id="search-field" type="text" class="form-control" placeholder="Search the book you want"
-        aria-label="Recipient's username" aria-describedby="button-addon2">
-      <button onclick="searchBook()" class="btn btn-outline-secondary" type="button" id="button-search">search</button>
+  <header class=" bg-secondary">
+    <div class="container">
+      <nav class="navbar navbar-expand-lg navbar-light ">
+        <div class="container-fluid">
+          <a class="navbar-brand fs-3 text-white" href="#"><img class="rounded-circle" src="image/book-archive.jpg" alt="" width="50" height="50">  Book Archive</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active text-white" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active text-white" href="#">Contacts</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active text-white" href="#">About</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
     </div>
-    <!-- error-message -->
-    <div>
-      <p id="error-message" class=" text-danger text-center"></p>
-    </div>
-    <!-- spinner  -->
-    <div class="d-flex justify-content-center">
-      <div id="spinner" class="spinner-border" role="status">
-        <span class="visually-hidden">Loading...</span>
+  </header>
+  <main>
+    <section class="container">
+      <h2 class="text-center text-info p-3">Search your favorite book</h2>
+      <!-- book search area -->
+      <div class="input-group mb-3 w-50 mx-auto">
+        <input id="search-field" type="text" class="form-control" placeholder="Search the book you want"
+          aria-label="Recipient's username" aria-describedby="button-addon2">
+        <button onclick="searchBook()" class="btn btn-outline-secondary" type="button"
+          id="button-search">search</button>
       </div>
-    </div>
-    <!-- result-fount  -->
-    <div class=" text-success fw-bold text-center p-3 ">About <span id="result-fount">0</span> results</div>
-    <!-- search-result -->
-    <div id="search-result" class="row row-cols-1 row-cols-md-4 g-4">
+      <!-- error-message -->
+      <div>
+        <p id="error-message" class=" text-danger text-center"></p>
+      </div>
+      <!-- spinner  -->
+      <div class="d-flex justify-content-center">
+        <div id="spinner" class="spinner-border" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </div>
+      <!-- result-fount  -->
+      <div class=" text-success fw-bold text-center p-3 ">About <span id="result-fount">0</span> results</div>
+      <!-- search-result -->
+      <div id="search-result" class="row row-cols-1 row-cols-md-4 g-4">
 
-    </div>
-  </section>
+      </div>
+    </section>
+  </main>
 
   <!-- js -->
   <script src="js/app.js"></script>
