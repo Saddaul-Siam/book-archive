@@ -30,7 +30,7 @@ const searchBook = () => {
 const displaySearchResult = books => {
   const searchResult = document.getElementById('search-result');
   searchResult.textContent = '';
-  books.forEach(book => {
+  books?.forEach(book => {
     console.log(book);
     // resultFount
     const resultFount = document.getElementById('result-fount');
@@ -43,9 +43,9 @@ const displaySearchResult = books => {
           <img src="https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg" class="card-img-top h-50 img-fluid"></img>
               <div class="card-body">
                   <h5 class="card-title">Book name: ${book.title}</h5>
-                  <p class="card-text">Author name: ${book.author_name}</p>
-                  <p class="card-text">publisher: ${book.publisher}</p>
-                  <p class="card-text">First publish: ${book.first_publish_year}</p>
+                  <p class="card-text">Author name: ${book.author_name ? book.author_name : ""}</p>
+                  <p class="card-text">publisher: ${book.publisher ? book.publisher : ""}</p>
+                  <p class="card-text">First publish: ${book.first_publish_year ? book.first_publish_year : ""}</p>
               </div>
           </div>
           `;
