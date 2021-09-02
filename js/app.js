@@ -23,21 +23,20 @@ const displaySearchResult = books => {
   books.forEach(book => {
     // console.log(book);
     console.log(books.length);
+    const resultFount = document.getElementById('result-fount');
+    resultFount.innerText = `${books.length}`;
     const div = document.createElement('div');
     div.classList.add('col');
     div.innerHTML = `
           <div class="card h-100">
           <img src="https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg" class="card-img-top" alt="..."></img>
               <div class="card-body">
-                  <h5 class="card-title">${book.title}</h5>
-                  <p class="card-text">${book.author_name}</p>
-                  <p class="card-text">${book.first_publish_year}</p>
+                  <h5 class="card-title">Book name: ${book.title}</h5>
+                  <p class="card-text">Author name: ${book.author_name}</p>
+                  <p class="card-text">First publish: ${book.first_publish_year}</p>
               </div>
           </div>
           `;
-
     searchResult.appendChild(div);
-
   });
-
 }
